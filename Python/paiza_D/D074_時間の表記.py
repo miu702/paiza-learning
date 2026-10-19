@@ -1,0 +1,13 @@
+"""
+時刻のうち n 時の部分が日をまたいで 25 時となってしまった場合は 1 時とするように 
+0 時から 23 時までの 24 時間表記として正しい数値に修正するプログラムを作成してください。
+"""
+number = int(input())
+
+dayTime = 24
+if number >= dayTime:
+    rest = number - dayTime
+    print(rest)
+    
+else:
+    print(number)

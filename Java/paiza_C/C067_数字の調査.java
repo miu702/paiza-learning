@@ -1,0 +1,61 @@
+
+/*
+あなたは 2 進数について勉強しました。
+そこで、あなたは任意の数字の 2 進数表示のどの桁が 1 になるのか、もしくは 0 になるのかが気になりました。
+
+知りたい桁が複数指定されるので、その桁が 0 なのか 1 なのか判定するプログラムを作成してください。
+知りたい桁は、与えられた数字を 2 進数にしたときの桁数より小さいものとします。
+
+
+入力される値
+入力は以下のフォーマットで与えられます。
+
+N X
+k_1
+k_2
+...
+k_N
+・1 行目にそれぞれ知りたい数字を表す整数 N, X がこの順で半角スペース区切りで与えられます。
+・続く N 行のうちの i 行目 (1 ≦ i ≦ N) には知りたい桁が右から何番目であるかを表す整数 k_i が与えられます。
+・入力は合計で N + 1 行となり、入力値最終行の末尾に改行が 1 つ入ります。
+
+
+
+期待する出力
+知りたい桁の数字を以下の形式で出力してください。
+a_1
+a_2
+...
+a_N
+・期待する出力は N 行からなります。
+・i 行目 (1 ≦ i ≦ N) には X を 2 進数表現にしたときの右から k_i 番目の桁の数字を表す a_i を出力して下さい。
+・すべて整数で出力してください。
+・出力最終行の末尾に改行を入れ、余計な文字、空行を含んではいけません。
+
+
+条件
+すべてのテストケースにおいて、以下の条件をみたします。
+・1 ≦ N ≦ 32
+・1 ≦ k_i ≦ 32 (1 ≦ i ≦ N)
+・1 ≦ X < 2^31
+*/
+import java.util.*;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    final int[] inputs = Arrays.stream(sc.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+    final int times = inputs[0];
+    final int number = inputs[1];
+
+    // 10進数→2進数に変換する
+    final String radix = Integer.toString(number, 2);
+
+    // 指定した場所を出力する
+    for (int i = 0; i < times; i++) {
+      final int index = radix.length() - sc.nextInt();
+      System.out.println(radix.charAt(index));
+    }
+
+  }
+}

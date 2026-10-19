@@ -1,0 +1,17 @@
+
+/*
+あなたは入力された文字列 S をある文字 c で囲うプログラムを作ることになりました。
+文字列 S と文字 c が改行区切りで与えられるので、文字列 S の前後を1文字ずつ文字 c で囲った文字列を出力して下さい。
+*/
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        final String A = sc.next();
+        final String B = sc.next();
+
+        final String words = B + A + B;
+        System.out.println(words);
+    }
+}

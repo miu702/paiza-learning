@@ -1,0 +1,52 @@
+/*
+あなたは PAIZA 大学の講義を受講した学生の評価をしています。
+学生の成績はテストの点数から 欠席回数 × 5 点 を引いた点数とすることにしました。
+成績がマイナスとなった場合は 0 とします。
+
+学生のテストと欠席回数のデータが学籍番号順に与えられたとき、
+成績が合格点以上になっている学生の学籍番号を順に出力するプログラムを作成してください。
+学籍番号は 1 から順に与えられます。
+
+
+入力される値
+入力は以下のフォーマットで与えられます。
+
+N M
+a_1 b_1
+a_2 b_2
+...
+a_N b_N
+・1 行目に学生の人数を表す整数 N と合格点を表す整数 M が半角スペース区切りで与えられます。
+・続く N 行のうち i 行目 (1 ≦ i ≦ N ) には学籍番号 i の学生のテストの点数を表す整数 a_i、欠席回数を表す整数 b_i が半角スペース区切りで与えられます。
+・入力は合計で N + 1 行であり、入力値最終行の末尾に改行が 1 つ入ります。
+
+
+
+期待する出力
+成績が合格点 M 以上になっている学生の学籍番号を学籍番号順に出力してください。
+成績は a_i - 5 * b_i と 0 の最大値で与えられます。
+
+出力の最後に改行を入れ、余計な文字、空行を含んではいけません。
+
+
+*/
+process.stdin.resume();
+process.stdin.setEncoding("utf8");
+
+const lines = [];
+const reader = require("readline").createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+reader.on("line", (line) => {
+  lines.push(line);
+});
+reader.on("close", () => {
+  const [member, pass_point] = lines[0].split(" ").map(Number);
+
+  for (let i = 1; i <= member; i++) {
+    const [point, absence] = lines[i].split(" ").map(Number);
+    const result_point = Math.max(point - absence * 5, 0);
+    if (result_point >= pass_point) console.log(i);
+  }
+});

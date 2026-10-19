@@ -1,2 +1,29 @@
 # paiza-learning
-Paiza programming practice in JavaScript, Java, and Python.
+
+JavaScript、Java、Pythonを使用したpaizaのプログラミング学習記録です。
+
+## About
+
+プログラミング問題への取り組みを通じて、基本文法、データ構造、アルゴリズム、問題解決力を身につけています。
+
+同じ問題を複数の言語で実装し、言語ごとの書き方や特徴の違いも学習しています。
+
+## Languages
+
+- JavaScript
+- Java
+- Python
+
+## Learning Topics
+
+- 配列・二次元配列の操作
+- オブジェクト・Mapなどのデータ構造
+- スタック・キュー
+- 探索アルゴリズム（BFS・DFS）
+- 累積和・いもす法
+- 条件分岐・繰り返し・関数
+- 入力データの処理と集計
+
+## Purpose
+
+学習した内容を整理し、プログラミングスキルの向上と、実装力・問題解決力の習得に取り組んでいます。
